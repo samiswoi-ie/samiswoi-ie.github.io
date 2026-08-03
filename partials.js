@@ -31,7 +31,7 @@ const SITE_FOOTER_HTML = `
             <rect x="3" y="5" width="18" height="14" rx="2" />
             <path d="M3 7l9 6 9-6" />
           </svg>
-          <a href="mailto:samiswoiservice@gmail.com">samiswoiservice@gmail.com</a>
+          <a href="mailto:info@samiswoi.ie">info@samiswoi.ie</a>
         </div>
       </div>
       <div class="footer-address">
