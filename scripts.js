@@ -1,5 +1,3 @@
-document.getElementById('copyrightYear').textContent = new Date().getFullYear();
-
 const galleryTrack = document.getElementById('galleryTrack');
 const galleryPrev = document.getElementById('galleryPrev');
 const galleryNext = document.getElementById('galleryNext');

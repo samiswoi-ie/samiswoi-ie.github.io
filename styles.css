@@ -35,8 +35,10 @@ h1,
 h2,
 .logo,
 .footer-brand,
+.footer-nav-heading,
 .product-name,
-.info-label {
+.info-label,
+.job-title {
   font-family: 'Baloo 2', cursive;
 }
 
@@ -566,6 +568,175 @@ button:focus-visible {
   transform: translateY(-4px);
 }
 
+/* ---------- Jobs ---------- */
+.jobs-hero {
+  padding: 40px 20px 8px;
+  text-align: center;
+}
+
+.jobs-hero-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.jobs-hero-content p {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.jobs {
+  padding: 34px 20px 8px;
+}
+
+.job-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 24px;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.job-links li {
+  font-size: 15px;
+  font-weight: 700;
+  padding-left: 18px;
+  position: relative;
+}
+
+.job-links li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--maroon);
+}
+
+.job-links a {
+  text-decoration: underline;
+}
+
+.job-links a:hover {
+  color: var(--maroon);
+}
+
+.job-list {
+  display: grid;
+  gap: 20px;
+}
+
+.job-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.job-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.job-description {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.job-groups {
+  display: grid;
+  gap: 18px;
+}
+
+@media (min-width: 700px) {
+  .job-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.job-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-group-heading {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--maroon);
+}
+
+.job-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.job-bullets li {
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 22px;
+  position: relative;
+}
+
+.job-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--maroon);
+}
+
+.job-card .btn {
+  margin-top: auto;
+}
+
+/* ---------- Apply ---------- */
+.apply {
+  padding: 34px 20px 8px;
+}
+
+.apply-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  text-align: center;
+}
+
+.apply-card p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.apply-card .btn {
+  margin-top: 8px;
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--cream);
@@ -610,6 +781,28 @@ button:focus-visible {
   flex-direction: column;
 }
 
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-nav-heading {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Baloo 2', cursive;
+}
+
+.footer-nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.footer-nav-link:hover {
+  color: var(--maroon);
+}
+
 @media (min-width: 601px) {
   .footer-columns {
     flex-direction: row;
@@ -620,7 +813,8 @@ button:focus-visible {
 
   .footer-about,
   .footer-contact,
-  .footer-address {
+  .footer-address,
+  .footer-nav {
     flex: 1;
   }
 }
