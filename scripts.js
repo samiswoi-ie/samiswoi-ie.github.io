@@ -12,3 +12,5 @@ mobileNav.addEventListener('click', (e) => {
     menuBtn.setAttribute('aria-expanded', 'false');
   }
 });
+
+document.getElementById('copyrightYear').textContent = new Date().getFullYear();
