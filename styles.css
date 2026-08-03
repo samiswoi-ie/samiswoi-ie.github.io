@@ -394,16 +394,18 @@ button:focus-visible {
 
 .carousel-track {
   display: flex;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
-.carousel-item {
-  flex: 0 0 25%;
-  box-sizing: border-box;
-  padding: 0 5px;
+.carousel-page {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
 }
 
-.carousel-item img {
+.carousel-page img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -412,7 +414,7 @@ button:focus-visible {
   transition: transform 0.2s ease;
 }
 
-.carousel-item img:hover {
+.carousel-page img:hover {
   transform: scale(1.04);
 }
 
