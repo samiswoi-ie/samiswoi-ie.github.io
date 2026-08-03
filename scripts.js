@@ -10,6 +10,7 @@ if (galleryTrack && galleryPrev && galleryNext) {
   const autoRotateDelay = 4500;
   let page = firstRealPage;
   let autoRotateTimer;
+  let isAnimating = false;
 
   const jumpTo = (index) => {
     galleryTrack.style.transition = 'none';
@@ -20,6 +21,8 @@ if (galleryTrack && galleryPrev && galleryNext) {
   };
 
   const goToPage = (index) => {
+    if (isAnimating) return;
+    isAnimating = true;
     page = index;
     galleryTrack.style.transform = `translateX(-${page * 100}%)`;
   };
@@ -33,6 +36,7 @@ if (galleryTrack && galleryPrev && galleryNext) {
     } else if (page === 0) {
       jumpTo(lastRealPage);
     }
+    isAnimating = false;
   });
 
   jumpTo(firstRealPage);
