@@ -37,11 +37,15 @@ a:focus-visible, button:focus-visible {
 }
 
 .page {
-  max-width: 600px;
   margin: 0 auto;
   background: var(--white);
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 600px) {
+  .page {
+    box-shadow: 0 0 60px rgba(0,0,0,0.12);
+  }
 }
 
 /* ---------- Header ---------- */
