@@ -392,6 +392,13 @@ button:focus-visible {
   overflow: hidden;
 }
 
+@media (min-width: 601px) {
+  .carousel {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
@@ -418,10 +425,33 @@ button:focus-visible {
   transform: scale(1.04);
 }
 
-.carousel-next {
+.carousel-controls {
   display: flex;
-  width: fit-content;
-  margin: 20px auto 0;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.carousel-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--maroon-dark);
+  transform: translateY(-2px);
+}
+
+.carousel-btn svg {
+  width: 22px;
+  height: 22px;
 }
 
 /* ---------- Find us ---------- */

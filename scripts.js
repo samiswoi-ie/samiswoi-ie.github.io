@@ -1,12 +1,23 @@
 document.getElementById('copyrightYear').textContent = new Date().getFullYear();
 
 const galleryTrack = document.getElementById('galleryTrack');
+const galleryPrev = document.getElementById('galleryPrev');
 const galleryNext = document.getElementById('galleryNext');
-if (galleryTrack && galleryNext) {
-  const realPageCount = galleryTrack.children.length - 1; // last child is the clone of page 1
+if (galleryTrack && galleryPrev && galleryNext) {
+  const totalPages = galleryTrack.children.length; // includes leading + trailing clone pages
+  const firstRealPage = 1;
+  const lastRealPage = totalPages - 2;
   const autoRotateDelay = 4500;
-  let page = 0;
+  let page = firstRealPage;
   let autoRotateTimer;
+
+  const jumpTo = (index) => {
+    galleryTrack.style.transition = 'none';
+    page = index;
+    galleryTrack.style.transform = `translateX(-${page * 100}%)`;
+    galleryTrack.offsetWidth; // force reflow so the jump applies before re-enabling the transition
+    galleryTrack.style.transition = '';
+  };
 
   const goToPage = (index) => {
     page = index;
@@ -14,26 +25,27 @@ if (galleryTrack && galleryNext) {
   };
 
   const nextPage = () => goToPage(page + 1);
+  const prevPage = () => goToPage(page - 1);
 
   galleryTrack.addEventListener('transitionend', () => {
-    if (page === realPageCount) {
-      galleryTrack.style.transition = 'none';
-      page = 0;
-      galleryTrack.style.transform = 'translateX(0%)';
-      galleryTrack.offsetWidth; // force reflow so the jump applies before re-enabling the transition
-      galleryTrack.style.transition = '';
+    if (page === totalPages - 1) {
+      jumpTo(firstRealPage);
+    } else if (page === 0) {
+      jumpTo(lastRealPage);
     }
   });
 
-  const restartAutoRotate = () => {
-    clearInterval(autoRotateTimer);
-    autoRotateTimer = setInterval(nextPage, autoRotateDelay);
-  };
+  jumpTo(firstRealPage);
+  autoRotateTimer = setInterval(nextPage, autoRotateDelay);
+
+  const stopAutoRotate = () => clearInterval(autoRotateTimer);
 
   galleryNext.addEventListener('click', () => {
+    stopAutoRotate();
     nextPage();
-    restartAutoRotate();
   });
-
-  restartAutoRotate();
+  galleryPrev.addEventListener('click', () => {
+    stopAutoRotate();
+    prevPage();
+  });
 }
