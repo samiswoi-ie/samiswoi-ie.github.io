@@ -47,6 +47,15 @@ a {
   text-decoration: none;
 }
 
+.link {
+  color: #1a56db;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #1442b0;
+}
+
 button {
   font-family: inherit;
   border: none;

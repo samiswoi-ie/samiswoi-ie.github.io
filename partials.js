@@ -13,11 +13,11 @@ const SITE_HEADER_HTML = `
 const SITE_FOOTER_HTML = `
   <footer class="site-footer" id="contact">
     <div class="footer-columns">
-      <div class="footer-about">
+      <a href="index.html" class="footer-about">
         <div class="footer-brand">SAMI SWOI</div>
         <div class="footer-location">Newcastle West</div>
         <div class="footer-desc">Fresh Foods &amp; Groceries</div>
-      </div>
+      </a>
       <div class="footer-contact">
         <div class="contact-row">
           <svg viewBox="0 0 24 24" fill="currentColor">
