@@ -506,7 +506,6 @@ button:focus-visible {
 .follow-us {
   padding: 32px 20px 40px;
   margin-top: 20px;
-  border-top: 1px solid var(--line);
   text-align: center;
 }
 
@@ -548,6 +547,8 @@ button:focus-visible {
 .site-footer {
   background: var(--cream);
   padding: 40px 24px 30px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
 }
 
 .footer-brand {
