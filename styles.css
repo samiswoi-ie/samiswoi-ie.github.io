@@ -388,17 +388,22 @@ button:focus-visible {
   padding: 34px 20px 8px;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+.carousel {
+  overflow: hidden;
 }
 
-.gallery-grid .placeholder-img {
-  aspect-ratio: 1 / 1;
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
 }
 
-.gallery-img {
+.carousel-item {
+  flex: 0 0 25%;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.carousel-item img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -406,8 +411,15 @@ button:focus-visible {
   border-radius: var(--radius-sm);
   transition: transform 0.2s ease;
 }
-.gallery-img:hover {
+
+.carousel-item img:hover {
   transform: scale(1.04);
+}
+
+.carousel-next {
+  display: flex;
+  width: fit-content;
+  margin: 20px auto 0;
 }
 
 /* ---------- Find us ---------- */
