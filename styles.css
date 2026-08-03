@@ -362,6 +362,7 @@ button:focus-visible {
   background: var(--cream);
   border-radius: var(--radius-lg);
   padding: 30px 26px;
+  text-align: center;
 }
 
 .hours-card p {
@@ -430,6 +431,35 @@ button:focus-visible {
   justify-content: center;
   gap: 16px;
   margin-top: 20px;
+}
+
+@media (min-width: 1100px) {
+  .carousel-wrap {
+    display: grid;
+    grid-template-columns: auto minmax(0, 960px) auto;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .carousel-wrap .carousel {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .carousel-controls {
+    display: contents;
+  }
+
+  .carousel-controls #galleryPrev {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .carousel-controls #galleryNext {
+    grid-column: 3;
+    grid-row: 1;
+  }
 }
 
 .carousel-btn {
