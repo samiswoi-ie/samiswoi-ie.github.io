@@ -675,7 +675,7 @@ button:focus-visible {
 
 @media (min-width: 700px) {
   .job-groups {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
@@ -706,6 +706,12 @@ button:focus-visible {
   font-weight: 600;
   padding-left: 22px;
   position: relative;
+}
+
+.job-pay-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .job-bullets li::before {
