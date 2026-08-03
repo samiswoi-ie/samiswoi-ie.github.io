@@ -76,8 +76,8 @@ button:focus-visible {
   background: var(--cream);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 26px 24px;
+  justify-content: center;
+  padding: 14px 24px;
   z-index: 30;
 }
 
@@ -112,64 +112,6 @@ button:focus-visible {
     width: 48px;
     height: 48px;
   }
-}
-
-.menu-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 9px;
-  padding: 10px;
-}
-
-.menu-btn span {
-  display: block;
-  height: 4px;
-  background: var(--ink);
-  border-radius: 2px;
-  transition: transform 0.25s ease, width 0.25s ease;
-}
-
-.menu-btn span:nth-child(1) {
-  width: 46px;
-}
-
-.menu-btn span:nth-child(2) {
-  width: 34px;
-}
-
-.menu-btn.active span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-  width: 40px;
-}
-
-.menu-btn.active span:nth-child(2) {
-  transform: translateY(-6.5px) rotate(-45deg);
-  width: 40px;
-}
-
-.mobile-nav {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--cream);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  border-top: 1px solid var(--line);
-}
-
-.mobile-nav.open {
-  max-height: 320px;
-}
-
-.mobile-nav a {
-  display: block;
-  padding: 16px 24px;
-  font-weight: 700;
-  font-size: 17px;
-  border-bottom: 1px solid var(--line);
 }
 
 /* ---------- Hero ---------- */
